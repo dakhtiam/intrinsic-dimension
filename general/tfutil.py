@@ -320,13 +320,13 @@ def summarize_weights(weights, sess=None):
     titl = '  %50s: %10s %-20s' % ('NAME', 'SIZE', 'SHAPE')
     if sess:
         titl += ' %10s, %10s, %10s' % ('MIN', 'MAX', 'RMS')
-    print titl
+    print (titl)
     for ii,var in enumerate(weights):
         st = '  %50s: %10d %-20s' % (var.name, np.prod(var.get_shape().as_list()), var.get_shape().as_list())
         if sess:
             val = vals[ii]
             st += ' %10s, %10s, %10s' % ('%.3g' % val.min(), '%.3g' % val.max(), '%.3g' % np.sqrt((val**2).mean()))
-        print st
+        print (st)
         total_params += np.prod(var.get_shape().as_list())
     print '  %50s: %10d' % ('Total', total_params)
     return total_params
