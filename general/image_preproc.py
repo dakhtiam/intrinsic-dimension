@@ -32,7 +32,7 @@ class ImagePreproc(object):
 
     def get_buffer(self, shape, dtype):
         if self.buf is None or self.buf.shape != shape or self.buf.dtype != dtype:
-            print 'ImagePreproc: creating new buffer'
+            print ('ImagePreproc: creating new buffer')
             self.buf = np.zeros(shape, dtype)
         return self.buf
         
