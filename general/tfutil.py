@@ -206,13 +206,13 @@ def add_grads_and_vars_hist_summaries(grads_and_vars):
 def add_grad_summaries(grads_and_vars, add_summaries_train=True, quiet=False):
     # Add summary nodes for grad values and prints a summary as well
     if not quiet:
-        print '\nGrads:'
+        print ('\nGrads:')
     for grad, var in grads_and_vars:
         if grad is None:
             continue   # skip grads that are None (corner case: not computed because model.loss has no dependence?)
         grad_name = '%s/%s__grad' % tuple(var.name.rsplit('/', 1))
         if not quiet:
-            print '  ', grad_name, grad
+            print ('  ', grad_name, grad)
         if add_summaries_train:
             hist_summaries_train(grad, name=grad_name)
     if not quiet:
@@ -337,16 +337,16 @@ def val_or_dynamic(vord):
 
 
 def summarize_opt(opt):
-    print 'Optimizer:'
-    print '   ', opt
+    print ('Optimizer:')
+    print ('   ', opt)
     if isinstance(opt, tf.train.MomentumOptimizer):
-        print '   LR: %s, momentum: %g, use_nesterov: %s' % (val_or_dynamic(opt._learning_rate), opt._momentum, opt._use_nesterov)
+        #print '   LR: %s, momentum: %g, use_nesterov: %s' % (val_or_dynamic(opt._learning_rate), opt._momentum, opt._use_nesterov)
     elif isinstance(opt, tf.train.RMSPropOptimizer):
-        print '   LR: %s, momentum: %g, decay: %g, epsilon: %g' % (val_or_dynamic(opt._learning_rate), opt._momentum, opt._decay, opt._epsilon)
+        #print '   LR: %s, momentum: %g, decay: %g, epsilon: %g' % (val_or_dynamic(opt._learning_rate), opt._momentum, opt._decay, opt._epsilon)
     elif isinstance(opt, tf.train.AdamOptimizer):
-        print '   LR: %s, beta1: %g, beta2: %g, epsilon: %g' % (val_or_dynamic(opt._lr), opt._beta1, opt._beta2, opt._epsilon)
+        #print '   LR: %s, beta1: %g, beta2: %g, epsilon: %g' % (val_or_dynamic(opt._lr), opt._beta1, opt._beta2, opt._epsilon)
     else:
-        print '   (cannot summarize unknown type of optimizer)'
+        #print '   (cannot summarize unknown type of optimizer)'
 
 
 def tf_assert_gpu(sess):
@@ -356,8 +356,8 @@ def tf_assert_gpu(sess):
     try:
         sess.run(bar, {foo: 1})
     except:
-        print '\n\n\ntf_assert_gpu: no GPU is present! In case it helps, CUDA_VISIBLE_DEVICES is %s' % repr(os.environ.get('CUDA_VISIBLE_DEVICES', None))
-        print 'See error below:\n\n\n'
+        #print '\n\n\ntf_assert_gpu: no GPU is present! In case it helps, CUDA_VISIBLE_DEVICES is %s' % repr(os.environ.get('CUDA_VISIBLE_DEVICES', None))
+        #print 'See error below:\n\n\n'
         raise
 
 
