@@ -463,7 +463,7 @@ def main():
             buddy.note_weighted_list(batch_x.shape[0], model.trackable_names, [result_train[k] for k in model.trackable_names], prefix='train_')
 
             if do_log_train(buddy.epoch, buddy.train_iter, ii):
-                print ('%3d train: %s (%.3gs/i) % (buddy.train_iter, buddy.epoch_mean_pretty_re('^train_', style=train_style), toc2())')
+                #print ('%3d train: %s (%.3gs/i) % (buddy.train_iter, buddy.epoch_mean_pretty_re('^train_', style=train_style), toc2())')
                 if args.output and not args.skiptfevents:
                     if param_histogram_summaries is not None:
                         hist_summary_str = result_train['param_histogram_summaries']
