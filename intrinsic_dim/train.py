@@ -492,17 +492,17 @@ def main():
                         {'mean_%s' % name: value for name,value in buddy.epoch_mean_list_re('^train_')},
                         prefix='buddy')
 
-    print '\nFinal'
-    print '%02d:%d val:   %s' % (buddy.epoch, buddy.train_iter, buddy.epoch_mean_pretty_re('^val_', style=val_style))
-    print '%02d:%d train: %s' % (buddy.epoch, buddy.train_iter, buddy.epoch_mean_pretty_re('^train_', style=train_style))
+    print ('\nFinal')
+    print ('%02d:%d val:   %s' % (buddy.epoch, buddy.train_iter, buddy.epoch_mean_pretty_re('^val_', style=val_style)))
+    print ('%02d:%d train: %s' % (buddy.epoch, buddy.train_iter, buddy.epoch_mean_pretty_re('^train_', style=train_style)))
 
-    print '\nfinal_stats epochs %g' % buddy.epoch
-    print 'final_stats iters %g' % buddy.train_iter
-    print 'final_stats time %g' % buddy.toc()
-    print 'final_stats total_params %g' % total_params
-    print 'final_stats fastest_avg_iter_time %g' % fastest_avg_iter_time
+    print ('\nfinal_stats epochs %g' % buddy.epoch)
+    print ('final_stats iters %g' % buddy.train_iter)
+    print ('final_stats time %g' % buddy.toc())
+    print ('final_stats total_params %g' % total_params)
+    print ('final_stats fastest_avg_iter_time %g' % fastest_avg_iter_time)
     for name, value in buddy.epoch_mean_list_all():
-        print 'final_stats %s %g' % (name, value)
+        print ('final_stats %s %g' % (name, value))
 
     if args.output and not args.skiptfevents:
         writer.close()   # Flush and close
