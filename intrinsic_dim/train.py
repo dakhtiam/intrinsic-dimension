@@ -481,7 +481,7 @@ def main():
             if ii > 0 and ii % 100 == 0:
                 avg_iter_time = toc3() / 100; tic3()
                 fastest_avg_iter_time = min(fastest_avg_iter_time, avg_iter_time)
-                print '  %d: Average iteration time over last 100 train iters: %.3gs' % (ii, avg_iter_time)
+                print ('%d: Average iteration time over last 100 train iters: %.3gs %(ii, avg_iter_time)')
 
             buddy.inc_train_iter()   # after finished training a mini-batch
 
