@@ -257,7 +257,7 @@ def main():
 
     print ('All model weights:')
     total_params = summarize_weights(model.trainable_weights)
-    print 'Model summary:'
+    print ('Model summary:')
     model.summary()
 
     model.print_trainable_warnings()
