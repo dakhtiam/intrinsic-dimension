@@ -333,7 +333,7 @@ def main():
             rescale_basis_matrices = [tf.assign(var, var / divisor) for var in basis_matrices]
             _ = sess.run(rescale_basis_matrices)
         else:
-            print '\nhere\n'
+            print ('\nhere\n')
             embed()
 
             assert False, 'what to do with fastfood?'
