@@ -89,7 +89,7 @@ class LRStepper(object):
             return self.lr_init
         ret = self.lr_init * self.lr_ratio ** int(min(buddy.epoch / self.lr_epochs, self.lr_steps))
         if ret != self.last_printed:
-            #print 'At epoch %d setting LR to %g %(buddy.epoch, ret)'
+            print ('At epoch %d setting LR to %g %(buddy.epoch, ret)')
             self.last_printed = ret
         return ret
 
@@ -255,7 +255,7 @@ def main():
 
 
 
-    print 'All model weights:'
+    print ('All model weights:')
     total_params = summarize_weights(model.trainable_weights)
     print 'Model summary:'
     model.summary()
@@ -359,7 +359,7 @@ def main():
     impreproc = ImagePreproc()
 
     if args.ipy:
-        print 'Embed: before train / val loop (Ctrl-D to continue)'
+        print ('Embed: before train / val loop (Ctrl-D to continue)')
         embed()
 
     fastest_avg_iter_time = 1e9
@@ -417,7 +417,7 @@ def main():
 
         if buddy.epoch == args.epochs:
             if args.ipy:
-                print 'Embed: at end of training (Ctrl-D to exit)'
+                print ('Embed: at end of training (Ctrl-D to exit)')
                 embed()
             break   # Extra pass at end: just report val stats and skip training
 
