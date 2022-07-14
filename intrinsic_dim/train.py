@@ -463,7 +463,7 @@ def main():
             buddy.note_weighted_list(batch_x.shape[0], model.trackable_names, [result_train[k] for k in model.trackable_names], prefix='train_')
 
             if do_log_train(buddy.epoch, buddy.train_iter, ii):
-                print ('%3d train: %s (%.3gs/i)' % (buddy.train_iter, buddy.epoch_mean_pretty_re('^train_', style=train_style), toc2()))
+                print ('%3d train: %s (%.3gs/i) % (buddy.train_iter, buddy.epoch_mean_pretty_re('^train_', style=train_style), toc2())')
                 if args.output and not args.skiptfevents:
                     if param_histogram_summaries is not None:
                         hist_summary_str = result_train['param_histogram_summaries']
@@ -496,13 +496,13 @@ def main():
     print ('%02d:%d val:   %s' % (buddy.epoch, buddy.train_iter, buddy.epoch_mean_pretty_re('^val_', style=val_style)))
     print ('%02d:%d train: %s' % (buddy.epoch, buddy.train_iter, buddy.epoch_mean_pretty_re('^train_', style=train_style)))
 
-    print ('\nfinal_stats epochs %g' % buddy.epoch)
-    print ('final_stats iters %g' % buddy.train_iter)
-    print ('final_stats time %g' % buddy.toc())
-    print ('final_stats total_params %g' % total_params)
-    print ('final_stats fastest_avg_iter_time %g' % fastest_avg_iter_time)
+    print ('\nfinal_stats epochs %g % buddy.epoch')
+    print ('final_stats iters %g % buddy.train_iter')
+    print ('final_stats time %g % buddy.toc()')
+    print ('final_stats total_params %g % total_params')
+    print ('final_stats fastest_avg_iter_time %g % fastest_avg_iter_time')
     for name, value in buddy.epoch_mean_list_all():
-        print ('final_stats %s %g' % (name, value))
+        print ('final_stats %s %g % (name, value)')
 
     if args.output and not args.skiptfevents:
         writer.close()   # Flush and close
