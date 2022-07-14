@@ -410,7 +410,7 @@ def main():
             if snap_intermed or snap_end:
                 # Snapshot
                 save_path = saver.save(sess, '%s/%s_%04d.ckpt' % (args.output, args.snapshot_to, buddy.epoch))
-                print 'snappshotted model to', save_path
+                print ('snappshotted model to'), save_path
                 with gzip.open('%s/%s_misc_%04d.pkl.gz' % (args.output, args.snapshot_to, buddy.epoch), 'w') as ff:
                     saved = {'buddy': buddy}
                     pickle.dump(saved, ff)
