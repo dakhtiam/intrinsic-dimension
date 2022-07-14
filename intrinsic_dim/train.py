@@ -401,7 +401,7 @@ def main():
                             prefix='buddy')
 
             print ('\ntime: %f. after training for %d epochs:\n%3d val:   %s (%.3gs/i)'
-                   % (buddy.toc(), buddy.epoch, buddy.train_iter, buddy.epoch_mean_pretty_re('^val_', style=val_style), toc2() / val_iters))
+                   % (buddy.toc(), buddy.epoch, buddy.train_iter, buddy.epoch_mean_pretty_re('^val_', style=val_style), toc2() / val_iters)')
 
         # 2. Possiby Snapshot, possibly quit
         if args.output and args.snapshot_to and args.snapshot_every:
