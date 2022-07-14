@@ -89,7 +89,7 @@ class LRStepper(object):
             return self.lr_init
         ret = self.lr_init * self.lr_ratio ** int(min(buddy.epoch / self.lr_epochs, self.lr_steps))
         if ret != self.last_printed:
-            print 'At epoch %d setting LR to %g % (buddy.epoch, ret)'
+            print 'At epoch %d setting LR to %g %(buddy.epoch, ret)'
             self.last_printed = ret
         return ret
 
