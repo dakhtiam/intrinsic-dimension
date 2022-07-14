@@ -328,7 +328,7 @@ def summarize_weights(weights, sess=None):
             st += ' %10s, %10s, %10s' % ('%.3g' % val.min(), '%.3g' % val.max(), '%.3g' % np.sqrt((val**2).mean()))
         print (st)
         total_params += np.prod(var.get_shape().as_list())
-    print '  %50s: %10d' % ('Total', total_params)
+    #print '  %50s: %10d' % ('Total', total_params)
     return total_params
 
 
